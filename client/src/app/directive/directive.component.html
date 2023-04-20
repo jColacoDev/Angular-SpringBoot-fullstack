@@ -1,0 +1,11 @@
+<button type="button" class="btn btn-primary my-3" (click)="setDisplay()">{{display ? "Hide" : "Show"}}</button>
+<div class="card">
+    <div class="card-header">
+        Course List
+    </div>
+    <ul class="list-group" *ngIf="display">
+        <li class="list-group-item" *ngFor="let item of courseList">
+            {{item}}
+        </li>
+    </ul>
+</div>
