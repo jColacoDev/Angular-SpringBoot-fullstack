@@ -1,1 +1,42 @@
-<p>clients works!</p>
+<div class="card text-bg-light mb-3" style="max-width: 40em;">
+    <div class="card-header">Clients</div>
+    <div class="card-body">
+      <h5 class="card-title">Clients List</h5>
+        <div class="my-2 text-left">
+            <button class="btn btn-rounded btn-primary" type="button" 
+                [routerLink]="['/clients/form']" routerLinkActive="router-link-active"
+            >
+                Create client
+            </button>
+        </div>
+      <table class="table-bordered table-striped table">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>email</th>
+                <th>createdAt</th>
+                <th>edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let client of clients">
+                <td>{{client.id}}</td>
+                <td>{{client.firstName}}</td>
+                <td>{{client.lastName}}</td>
+                <td>{{client.email}}</td>
+                <td>{{client.createdAt}}</td>
+                <td>
+                    <button type="button" name="button"
+                        [routerLink]="['/clients/form', client.id]" routerLinkActive="router-link-active" 
+                        class="btn btn-primary"
+                    >
+                        edit
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+      </table>
+  </div>
+</div>
